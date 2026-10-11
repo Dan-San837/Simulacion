@@ -34,8 +34,8 @@
 ### 3.1. Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_REPOSITORIO>/Practica 1
+git clone https://github.com/Dan-San837/Simulacion.git
+cd Simulacion/Practica 1
 ```
 
 ### 3.2. Backend (Python)
