@@ -84,9 +84,9 @@ python3 "Vista (Main).py"
 - **Funcionalidades:** Cálculo del índice de lluvia, clasificación por estado, generación de gráficas, normalización de datos y soporte para ajuste del modelo.
 - **Capturas:** 
     - Grafica Indice 
-    
+    <img width="547" height="177" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/Indice.png?raw=true">
     - Grafica Indice Ajustado
-    
+    <img width="547" height="177" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/Indice%20ajustado.jpeg?raw=true">
 ---
 
 ## Flujo del proyecto
