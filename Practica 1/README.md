@@ -25,8 +25,8 @@
 
 ## 2. Tecnologías utilizadas
 
-- **Lenguajes:** Python 3.x, JavaScript (JS) / TypeScript *(A especificar según frontend)*
-- **Librerías:** `matplotlib` (generación e integración de gráficas). *(Agregar otras según necesidad)*
+- **Lenguajes:** Python 3.x
+- **Librerías:** `matplotlib` (generación e integración de gráficas).
 
 
 ## 3. Instalación
