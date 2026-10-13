@@ -78,6 +78,7 @@ python3 "Vista (Main).py"
 | `Vista (Main).py` | Almacena los datos, los despliega en consola, calcula resultados y genera las gráficas con `matplotlib`. |
 | `requirements.txt` | Dependencias de Python. |
 | `README.md` | Documentación del proyecto. |
+| `Practica1.pdf` |Reporte Tècnico de Actividades Práctico-Expermentales Nro. 001|
 
 ## 6. Información adicional
 
@@ -89,6 +90,14 @@ python3 "Vista (Main).py"
 
     - Grafica Indice Ajustado
     <img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/Indice%20ajustado.jpeg?raw=true">
+
+### 6.1. Declaraciòn de uso de IA
+**Herramienta utilizada:** Gemini
+
+**Forma de Uso:** La herramienta fue utilizada como apoyo para revisar, corregir e identificar errores en la estructura del còdigo desarrollado.
+
+**Alcance de su intervenciòn:** Medio-bajo
+
 ---
 
 ## Flujo del proyecto
