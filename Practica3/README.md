@@ -138,6 +138,13 @@ python3 -m src.main
     - Gráficas de cola y tiempos de espera por escenario
     <img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/graficas_mm1.png?raw=true">
 
+### 6.1. Declaraciòn de uso de IA
+**Herramienta utilizada:** OpenCode
+
+**Forma de Uso:** La herramienta fue utilizada como apoyo para revisar, corregir e identificar errores en la estructura del còdigo desarrollado.
+
+**Alcance de su intervenciòn:** Medio
+
 ---
 
 ## Flujo del proyecto
