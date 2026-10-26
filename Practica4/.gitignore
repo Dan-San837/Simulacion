@@ -1,0 +1,14 @@
+# Compilados
+out/
+target/
+*.class
+
+# Salidas generadas por la ejecucion
+NetLogo/resultados_java.csv
+grafica_sir_java.png
+
+# Entornos de desarrollo
+.idea/
+*.iml
+.vscode/
+.DS_Store

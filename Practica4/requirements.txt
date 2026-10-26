@@ -1,0 +1,108 @@
+REQUISITOS Y EJECUCION - MODELO SIR EN JAVA 
+====================================================================
+
+1. SOFTWARE NECESARIO
+   - JDK 11 o superior (probado con JDK 17). Debe estar instalado y el
+     comando `java` (y `javac`) en el PATH. (Se compila con
+     `--release 11`; con JDK 8 NO compila.)
+       Descarga: https://adoptium.net/
+       Comprobacion: java -version  /  javac -version
+   - Sistema operativo: Linux, macOS o Windows.
+   - NO se requieren librerias externas (solo el JDK estandar:
+     Swing/Java2D para la grafica, java.util/java.io para el resto).
+   - No hay dependencias que instalar: este proyecto no usa pip/npm.
+   - Maven 3.6+ es OPCIONAL: solo hace falta si se quiere usar el
+     `pom.xml` (ver seccion 4). La primera vez descarga sus plugins.
+   - NetLogo 7.0.4 (o 7.x) para la parte de visualizacion/comparacion.
+     El modelo `modelo_sir_netlogo.nlogox` esta en el formato nuevo de
+     NetLogo 7; `modelo_sir_netlogo.nlogo` es el formato clasico, que
+     tambien abre en NetLogo 6.x/7. NetLogo necesita entorno grafico
+     (no funciona headless para uso normal).
+       Descarga: https://ccl.northwestern.edu/netlogo/download.shtml
+
+
+2. ESTRUCTURA DEL PROYECTO (arquitectura MVC)
+   src/
+   └── sir/
+       ├── Main.java                  Punto de entrada (arranque/argumentos)
+       ├── model/                     MODELO: datos y logica de la simulacion
+       │   ├── Estado.java            Estados S, I, R (enum)
+       │   ├── Individuo.java         Individuo de la poblacion (id + estado)
+       │   ├── ParametrosSIR.java     N, I0, beta, gamma, tiempo, R0
+       │   ├── ResultadoPaso.java     Registro (tiempo, S, I, R)
+       │   └── SimulacionSIR.java     Poblacion + algoritmo por pasos
+       ├── controller/                CONTROLADOR: orquesta la simulacion
+       │   └── ControladorSIR.java    Ejecuta los 100 pasos, exporta CSV y grafica
+       └── view/                      VISTA: salida al usuario
+           ├── VistaConsola.java      Tabla de resultados en consola
+           └── GraficaSIR.java        Grafica S(t), I(t), R(t) (PNG + ventana)
+
+   NetLogo/
+   ├── modelo_sir_netlogo.nlogox   Modelo para NetLogo 7 (recomendado)
+   ├── modelo_sir_netlogo.nlogo    Mismo modelo en formato clasico (6.x/7)
+   └── resultados_java.csv         Salida de Java que lee el modelo
+
+   IMPORTANTE: la carpeta NetLogo/ debe conservarse junto al codigo.
+   Java escribe el CSV ahi por defecto y el modelo NetLogo lo lee de
+   ahi mismo (rutas relativas al directorio del modelo).
+
+3. COMPILAR
+   Linux / macOS:
+     mkdir -p out
+     javac -d out $(find src -name "*.java")
+
+   Windows (PowerShell):
+     mkdir out
+     javac -d out (Get-ChildItem -Recurse src\*.java).FullName
+
+4. EJECUTAR (desde la carpeta del proyecto)
+   Linux / macOS:
+     java -cp out sir.Main
+   Windows:
+     java -cp out sir.Main
+
+   Opciones disponibles:
+     java -cp out sir.Main --semilla 42      # resultado reproducible
+     java -cp out sir.Main --csv ruta.csv    # ruta del CSV de salida
+     java -cp out sir.Main --sin-grafica     # no abre la ventana grafica
+     java -cp out sir.Main --ayuda           # muestra la ayuda
+
+   Nota: la semilla aleatoria siempre se imprime en pantalla; si repites
+   la ejecucion con esa semilla obtienes exactamente los mismos datos.
+
+   ALTERNATIVA CON MAVEN (opcional):
+     mvn compile exec:java
+     mvn package && java -jar target/sir-simulacion.jar
+
+5. SALIDAS GENERADAS
+   NetLogo/resultados_java.csv
+                          Ruta por defecto (se busca la carpeta NetLogo/
+                          subiendo desde el directorio actual y se crea si
+                          no existe; se puede cambiar con --csv).
+                          Columnas: tiempo,susceptibles,infectados,recuperados
+                          Cabecera + 101 filas de datos (t = 0 ... 100).
+   grafica_sir_java.png   En el directorio desde el que se ejecuta.
+                          Grafica de la evolucion de S(t), I(t) y R(t).
+
+6. VISUALIZAR LOS RESULTADOS EN NETLOGO
+   1) Ejecutar antes el programa Java (regenera el CSV).
+   2) Abrir NetLogo y cargar NetLogo/modelo_sir_netlogo.nlogox
+      (o modelo_sir_netlogo.nlogo si se usa NetLogo 6.x).
+   3) Pulsar el boton CARGAR JAVA: dibuja S(t), I(t), R(t) y monitores.
+      Si el CSV no existe, el modelo pide elegir el archivo manualmente.
+   Nota: NetLogo resuelve "resultados_java.csv" respecto a la carpeta
+   del modelo, por eso ambos archivos deben estar en NetLogo/.
+
+7. PARAMETROS DEL MODELO (mismos en todas las herramientas de la guia)
+   Poblacion (N)              = 100
+   Susceptibles iniciales (S0)= 95
+   Infectados iniciales (I0)  = 5
+   beta (tasa de infeccion)   = 0.30
+   gamma (tasa de recuperacion)= 0.10
+   Tiempo de simulacion       = 100
+   R0 = beta / gamma          = 3
+
+8. COMPROBAR RAPIDAMENTE
+   javac -d out $(find src -name "*.java")
+   java -cp out sir.Main --semilla 42 --sin-grafica
+   head NetLogo/resultados_java.csv
