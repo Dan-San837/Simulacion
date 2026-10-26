@@ -142,6 +142,12 @@ def animar_simulacion(resultados: list[ComparacionEscenario]) -> None:
         )
         animadores.append(anim)
 
+       def detener_animaciones(_event):
+        for anim in animadores:
+            if anim.event_source is not None:
+                anim.event_source.stop()
+        fig.canvas.mpl_connect("close_event", detener_animaciones)
+
     plt.tight_layout(rect=(0, 0, 1, 0.93))
     plt.show()
 
