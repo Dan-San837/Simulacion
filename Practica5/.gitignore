@@ -1,0 +1,14 @@
+# Documentacion que no se versiona
+/README2.md
+/Java/README.md
+
+# Resultados generados
+*.csv
+*.png
+
+# Entorno y cache de Python
+.venv/
+__pycache__/
+
+# Clases compiladas de Java
+*.class
