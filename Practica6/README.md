@@ -197,6 +197,16 @@ Para comparar las secuencias de Python y Java, ejecútalos con los mismos valore
 
 - **Funcionalidades:** generación reproducible mediante LCG; pruebas de uniformidad Chi-cuadrado y Kolmogorov-Smirnov; interpretación de valores p; comparación de configuraciones; estimación y benchmark de \(\pi\); exportación opcional de la secuencia a CSV y de la distribución acumulada a una gráfica.
 - **Resultados esperados:** ambas implementaciones producen la misma secuencia cuando reciben los mismos parámetros. Los resultados de las pruebas permiten evaluar si se rechaza la hipótesis de uniformidad; la estimación de \(\pi\) y su tiempo se muestran para los tamaños 1 000, 10 000, 100 000 y 1 000 000.
+  
+**Grafica Python:**
+
+<img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/Python.png">
+
+
+**Grafica Java:**
+
+<img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/develop/docs/Java.svg">
+
 
 ### 6.1. Declaraciòn de uso de IA
 **Herramienta utilizada:** OpenCode
