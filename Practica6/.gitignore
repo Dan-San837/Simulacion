@@ -1,0 +1,45 @@
+# Java compiled output
+Java/out/
+Java/**/*.class
+
+# Python virtual environments and bytecode
+Python/.venv/
+Python/venv/
+Python/env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated sequence exports and plots
+Java/*.csv
+Java/*.png
+Java/*.svg
+Python/*.csv
+Python/*.png
+Python/*.svg
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Source reference documents
+/Ejemplo.md
+/Teoria.md
+
+# Logs and temporary files
+*.log
+*.tmp
