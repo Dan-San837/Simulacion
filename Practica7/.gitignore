@@ -1,0 +1,21 @@
+# Python bytecode and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# Java build output
+Java/bin/
+*.class
+
+# Generated charts
+Python/resultados_monte_carlo.svg
+Java/resultados_monte_carlo.svg
+
+# IDE and operating system files
+.idea/
+.DS_Store
+Thumbs.db
