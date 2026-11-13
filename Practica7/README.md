@@ -137,9 +137,12 @@ Las clases compiladas de Java se crean en `Java/bin/`, que no se incluye en el r
 - **Capturas:**
 
     Java:
-
+  
+    <img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/main/docs/JavaMonteCarlo.png">
+    
     Python:
-
+  
+    <img width="580" height="500" alt="image" src="https://github.com/Dan-San837/Simulacion/blob/main/docs/PythonMonteCarlo.png">
 
 
 ### 6.1. Declaraciòn de uso de IA
