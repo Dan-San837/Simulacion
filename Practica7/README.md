@@ -10,11 +10,11 @@
 
 #### Estimación de π por Monte Carlo
 
-Se generan puntos aleatorios en un cuadrado que contiene un círculo inscrito. Si \(N_c\) puntos caen dentro del círculo y \(N\) es el total de puntos, la aproximación es:
+Se generan puntos aleatorios en un cuadrado que contiene un círculo inscrito. Si $N_c$ puntos caen dentro del círculo y $N$ es el total de puntos, la aproximación es:
 
-\[
+$$
 \pi \approx 4\frac{N_c}{N}
-\]
+$$
 
 Se utilizan muestras de 1 000, 10 000, 100 000 y 1 000 000 de puntos. Se registra la estimación, su error absoluto y el tiempo de ejecución.
 
@@ -22,9 +22,9 @@ Se utilizan muestras de 1 000, 10 000, 100 000 y 1 000 000 de puntos. Se registr
 
 La variación de la cantidad de vehículos en cola se representa mediante:
 
-\[
-\frac{dQ(t)}{dt}=\lambda(t)-\mu(t)
-\]
+$$
+\frac{dQ(t)}{dt} = \lambda(t) - \mu(t)
+$$
 
 Donde \(Q(t)\) es la cantidad de vehículos en cola, \(\lambda(t)\) es la tasa de llegada y \(\mu(t)\) es la tasa de salida. El ciclo del semáforo cumple \(T=R+G\), donde \(R\) es la duración de la luz roja y \(G\) la de la luz verde.
 
